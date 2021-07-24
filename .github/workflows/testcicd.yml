@@ -28,9 +28,7 @@ jobs:
 
       - name: Test with the dotnet CLI
         run: dotnet test
-
-      - name:
-
+      
       - name: Docker ECR
         uses: appleboy/docker-ecr-action@v0.0.3
         with:
