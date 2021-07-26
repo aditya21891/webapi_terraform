@@ -52,7 +52,7 @@ jobs:
           -backend-config="region="us-east-1"
 
       - name: Terraform Non-Prod-Validate
-        if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/qa'
+        if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/test'
         working-directory: ./infra
         id: non-prod-validate
         run: terraform validate
@@ -64,7 +64,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/qa'
+        if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/test'
         id: non-prod-plan
         working-directory: ./infra
         run:
@@ -79,7 +79,7 @@ jobs:
         run: exit 1
 
       - name: Terraform Non-Prod-Apply
-        if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/qa'
+        if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/test'
         working-directory: ./infra
         run:
           terraform apply -var-file=environment/non-prod-properties.tfvars
