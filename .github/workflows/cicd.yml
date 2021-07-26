@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - dev
-      - qa
+      - test
       - prod
   pull_request:
     types: [merged]
