@@ -1,1 +1,1 @@
-https://aws.amazon.com/blogs/opensource/github-actions-aws-fargate/
+Code for Spining Up infrastructure for sample .Net application 
