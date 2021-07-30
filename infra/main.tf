@@ -288,7 +288,7 @@ resource "aws_autoscaling_group" "auto_scaling_group" {
   launch_configuration = aws_launch_configuration.launch_configuartion.name
   min_size             = 1
   max_size             = 2
-  load_balancers       = [aws_lb.webapi.id]
+  target_group_arns    = [aws_lb_target_group.loadbalancer_targetgroup.arn]
   vpc_zone_identifier  = [aws_subnet.public_subnet_one.id, aws_subnet.public_subnet_two.id]
   lifecycle {
     create_before_destroy = true
